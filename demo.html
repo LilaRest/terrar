@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terrar.js demo</title>
+    <script src="dist/terrar.umd.js"></script>
+  </head>
+  <body>
+    <h1>I'm outside</h1>
+    <style>
+      h1 {
+        background: green;
+      }
+    </style>
+    <script>
+      document.querySelector("h1").innerHTML += " <small>(i'm appended from script)</small>";
+    </script>
+
+    <terrar-frame>
+      <template>
+        <h1 class="test">I'm in a Terrar frame</h1>
+        <style>
+          h1 {
+            background: cyan;
+          }
+        </style>
+        <script>
+          document.querySelector("h1").innerHTML += " <small>(i'm appended from script)</small>";
+        </script>
+      </template>
+    </terrar-frame>
+
+    <div id="receiver"></div>
+    <template class="content">
+      <h1 class="test">I'm in a Terrar frame</h1>
+      <style>
+        h1 {
+          background: magenta;
+        }
+      </style>
+      <script>
+        document.querySelector("h1").innerHTML += " <small>(i'm appended from script)</small>";
+      </script>
+    </template>
+    <script>
+      window.addEventListener("load", function () {
+        const startTime = Date.now();
+        const receiver = document.querySelector("#receiver");
+        const content = document.querySelector(".content").innerHTML;
+        for (let n = 0; n < 50; n++) {
+          const frame = terrar.createFrame(content)
+          if (n === 49) {
+            frame.onRendered(() => {
+              console.log("EXECUTION TIME : ", Date.now() - startTime, "ms")
+            })
+          }
+          receiver.appendChild(frame);
+        }
+      })
+    </script>
+  </body>
+</html>
