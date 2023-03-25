@@ -8,8 +8,8 @@
 <br>
 
 <div align="center">
-	<img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/LilaRest/terrar/semantic-release.yml">
-	<img alt="GitHub Downloads" src="https://img.shields.io/github/downloads/LilaRest/terrar/total?color=%23ddccee">
+	<!--<img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/LilaRest/terrar/semantic-release.yml">-->
+	<img alt="GitHub Downloads" src="https://img.shields.io/github/downloads/LilaRest/terrar/total?color=%23ddccef">
 	<img alt="GitHub License" src="https://img.shields.io/github/license/LilaRest/terrar?color=%235588ff">
 	<img alt="Semantic-release: angular" src="https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release">
 </div>
