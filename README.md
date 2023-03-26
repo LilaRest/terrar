@@ -48,7 +48,7 @@ import "terrar";
 
 For browser usage, simply put this `<script>` tag inside your HTML document :
 ```html
-<script src="https://unpkg.com/terrar@latest"></script>
+<script src="https://unpkg.com/terrar@latest/dist/terrar.umd.js"></script>
 ```
 The `terrar` object will be available in the global scope.
 
